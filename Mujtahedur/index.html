@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>I am Mujtahedur</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@800&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: #000; */
+            color: #FFF;
+            position: relative;
+        }
+
+        .main {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .main .menu {
+            width: 25%;
+            height: 100%;
+            background-color: #FFF;
+            border-right: 1px solid #7c7c7c52;
+        }
+
+        .main .menu .upperBox {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-bottom: 1.5px solid #80808039;
+        }
+
+        .main .menu .upperBox .name {
+            font-size: 2rem;
+            color: #000000;
+            letter-spacing: .1rem;
+            position: relative;
+        }
+
+        .main .menu .upperBox .name.myName::before {
+            position: absolute;
+            content: '';
+            width: 15px;
+            height: 15px;
+            /* background-color: red; */
+            border-top: 3px solid orange;
+            border-left: 3px solid orange;
+            top: 0;
+            left: -5px;
+        }
+
+        .main .menu .upperBox .name.myName::after {
+            position: absolute;
+            content: '';
+            width: 15px;
+            height: 15px;
+            /* background-color: red; */
+            border-bottom: 3px solid orange;
+            border-right: 3px solid orange;
+            bottom: 0;
+            right: -5px;
+        }
+
+        .main .menu .upperBox .name .m {
+            color: orange;
+            font-family: 'Kaushan Script', cursive;
+            margin-right: 2px;
+        }
+
+        .main .menu .upperBox .name.up {
+            transform: translateX(-60px);
+        }
+
+        .main .menu .lowerBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70%;
+            width: 100%;
+        }
+
+        .main .menu .lowerBox ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: flex-start;
+        }
+
+        .main .menu .lowerBox ul li {
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            /* transition: 0.3s; */
+            border-radius: 5px;
+            border-bottom: 1px solid #000;
+        }
+
+        .main .menu .lowerBox ul li i {
+            color: orange;
+            /* transition: 0.3s; */
+        }
+
+        .main .menu .lowerBox ul li a {
+            text-decoration: none;
+            color: #000;
+            /* transition: 0.3s; */
+        }
+
+        .main .menu .lowerBox ul li.active i,
+        .main .menu .lowerBox ul li.active a {
+            color: #ffffff;
+        }
+
+        .main .menu .lowerBox ul li.active {
+            background-color: orange;
+        }
+
+
+        .main .article {
+            width: 75%;
+            height: 100%;
+            background-color: aliceblue;
+            display: flex;
+        }
+
+        .main .article .about {
+            width: 60%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            /* border-right: 1px solid gray; */
+            color: #000;
+            padding: 3rem;
+            gap: 1rem;
+        }
+
+        .main .article .about h1 {
+            font-size: 1.5rem;
+        }
+
+        .main .article .about h1 .title {
+            font-family: 'Kaushan Script', cursive;
+            text-transform: lowercase;
+            color: orange;
+            font-size: 2rem;
+        }
+
+        .main .article .about h2 {
+            font-size: 1.2rem;
+        }
+
+        .main .article .image {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main .article .image .img {
+            position: relative;
+            width: 70%;
+            aspect-ratio: 1/1.5;
+            background-color: #000000;
+            box-shadow: 0px 0px 5px #000;
+        }
+
+        .main .article .image .img::before {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 35%;
+            top: -20px;
+            left: -20px;
+            border-top: 5px solid orange;
+            border-left: 5px solid orange;
+        }
+
+        .main .article .image .img::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 35%;
+            bottom: -20px;
+            right: -20px;
+            border-bottom: 5px solid orange;
+            border-right: 5px solid orange;
+        }
+
+        .main .article .image .img img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .main .article .about .myInfo {
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        .main .article .about .myInfo p {
+            font-family: sans-serif;
+            letter-spacing: 1px;
+        }
+        .thanksMessage{
+            color: orange;
+        }
+        @media only screen and (max-width:820px){
+            .main .article{
+                flex-direction: column-reverse;
+                font-size: 0.9rem;
+    
+            }
+            .main .article .image{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            .main .article .image .img{
+                width: 35%;
+                aspect-ratio: 1/1.5;
+            }
+            .main .article .about {
+                width: 100%;
+            }
+            .main .article .about .myInfo {
+                flex-direction: row;
+            }
+        }
+
+        @media only screen and (max-width:620px){
+            .main .menu .upperBox .name{
+                font-size: 1rem;
+            }
+            .main .menu .upperBox .name.up{
+                transform: translateX(-30px);
+            }
+            .main .menu {
+                width: 35%;
+            }
+            .main .article {
+                width: 65%;
+            }
+            .main .menu .lowerBox ul li{
+                font-size: .7rem;
+            }
+            .main .article .about h1{
+                font-size: 1rem;
+            }
+            .main .article .about h2{
+                font-size: 1rem;
+            }
+            .main .article .about .myInfo{
+                flex-direction: column;
+                font-size: .7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="menu">
+            <div class="upperBox">
+                <h1 class="name up">I am </h1>
+                <h1 class="name myName"><span class="m">M</span>ujtahedur</h1>
+            </div>
+            <div class="lowerBox">
+                <ul>
+                    <li id="Home" class="active">
+                        <i class="fa-solid fa-house"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li id="About">
+                        <i class="fa-solid fa-address-card"></i>
+                        <a href="#">About</a>
+                    </li>
+                    <li id="Fav">
+                        <i class="fa-solid fa-medal"></i>
+                        <a href="#">Favourite Sport</a>
+                    </li>
+                    <li id="Contact">
+                        <i class="fa-solid fa-address-book"></i>
+                        <a href="#">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="article">
+            <div class="about">
+                <h1>Hello,my name is <span class="title">MUJTAHEDUR RAHMAN</span></h1>
+                <h2>I am a <span style="color: orange;">Student</span></h2>
+                <div class="myInfo"><p>Hi I'm Mujtahedur Rahman.I am 10 years old.I am reading in class VI in an English
+                    Medium School.My Favourite sport is Football and my Favourite Football player is Cristiano Ronaldo.</p>
+                </div>
+            </div>
+            <div class="image">
+                <div class="img">
+                    <img src="/pic/MyImg.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let myInfo = document.querySelector('.myInfo');
+    let buttons = document.querySelectorAll('li');
+
+    console.log(buttons[0]);
+
+    function setActive() {
+
+        buttons.forEach((item) => {
+            item.classList.remove('active');
+            this.classList.add('active');
+        })
+        if (this.id == 'Home' && this.className == 'active') {
+            myInfo.innerHTML = "Hi I'm Mujtahedur Rahman.I am 10 years old.I am reading in class VI in an English Medium School.My Favourite sport is Football and my Favourite Football player is Cristiano Ronaldo.";
+        }
+        else if (this.id == 'About' && this.classList == 'active') {
+            myInfo.innerHTML = `<div>
+                                    <p>Name : Mujtahedur Rahman</p>
+                                    <p>Date of birth : 19/06/2013</p>
+                                    <p>Address : Samsi,Malda</p>
+                                    <p>Religion : Islam</p>
+                                    <p>Nationality : Indian </p>
+                                </div>
+                                <br>
+                                <div>
+                                    <p>Favourite fruit : Mango</p>
+                                    <p>Favourite Fast Food : Mutton Briyani</p>
+                                    <p>Favourite Color : Blue & Black</p>
+                                    <p>Favourite Actress : Shah Rukh Khan</p> <p>School Name : Emmanuel English School</p>
+                                </div>`
+        }
+        else if (this.id == 'Fav' && this.className == 'active') {
+            myInfo.innerHTML = `<p>Football is my favorite sport. The thrill of the game, the teamwork, and the universal appeal make it a source of endless joy and excitement for me. Whether playing or watching, the beautiful game holds a special place in my heart.</p>
+    <p>Cristiano Ronaldo is my favorite football player. His unparalleled skill, goal-scoring prowess, and dedication to the game make him an inspiration. Watching him play is a constant source of awe and admiration for me.
+</p>
+    `         
+        }
+        else{
+            myInfo.innerHTML = `<p>Email id : mujtahedurrahman07@gmail.com</P><br><br><p class="thanksMessage">Thanks for visiting my website</p>`
+        }
+    }
+
+    buttons.forEach((item) => {
+        item.addEventListener('click', setActive);
+    })
+
+</script>
+
+</html>
+
+
+<p></p>

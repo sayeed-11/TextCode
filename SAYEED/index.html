@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="/pic/WhatsApp Image 2023-12-28 at 21.54.41_0f074c7d.jpg">
+    <title>My portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@800&display=swap');
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            outline: none;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            font-family: sans-serif;
+            /* overflow-y: auto; */
+        }
+
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            background: linear-gradient(270deg,#000,#925f02,#000);
+        }
+
+        nav .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: .5rem 1rem;
+            align-items: center;
+            border-bottom: 1px solid #FFF;
+        }
+
+        nav .nav-container .logo a {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #FFF;
+        }
+
+        nav .nav-container .menu {
+            font-size: 2rem;
+            color: #FFF;
+            display: none;
+        }
+
+        nav .nav-container ul {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+            letter-spacing: .1rem;
+            transition: 0.3s;
+        }
+
+        nav .nav-container ul.active {
+            left: 0%;
+        }
+
+        nav .nav-container ul a {
+            color: #FFF;
+            position: relative;
+            padding: .2rem 0rem;
+        }
+
+        nav .nav-container ul a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: -2px;
+            left: 0px;
+            background: linear-gradient(270deg,#ffffff,#7b7b7b,#ffffff);
+            display: none;
+            transition: 0.3s;
+        }
+
+        nav .nav-container ul a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0px;
+            background: linear-gradient(270deg,#ffffff,#7b7b7b,#ffffff);
+            display: none;
+            transition: 0.3s;
+        }
+
+        nav .nav-container ul li:hover a::before,
+        nav .nav-container ul li:hover a::after {
+            display: block;
+        }
+
+        section {
+            background: linear-gradient(270deg,#925f02,#000000);
+        }
+
+        section .main-content {
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: auto;
+            color: #fff;
+            /* padding: 10rem 2rem; */
+        }
+
+        section .main-content .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        section .main-content .content {
+            font-family: 'Red Hat Display', sans-serif;
+        }
+
+        section .main-content .content .fadeTitle {
+            color: gray;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            font-size: 1.1rem;
+            margin: -1rem 0rem;
+        }
+
+        section .main-content .content .subtitle {
+            font-weight: 900;
+            font-size: 2rem;
+            color: orange;
+            margin: -1rem 0rem;
+        }
+
+        section .main-content .content .article {
+            color: #cbc8c8;
+            letter-spacing: .1rem;
+            font-family: sans-serif;
+            margin: 1.5rem 0rem;
+        }
+
+        section .main-content .content .buttons {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        section .main-content .content .buttons button {
+            font-size: 1rem;
+            width: 120px;
+            padding: 1rem;
+            outline: none;
+            border: 2px solid orange;
+            background-color: orange;
+            color: #FFFF;
+            border-radius: 10px;
+            letter-spacing: .2rem;
+        }
+
+        section .main-content .content .buttons button.portfolio {
+            background-color: #ffffff;
+            color: #ffa600;
+            transition: 0.3s;
+        }
+
+        section .main-content .content .buttons button.portfolio:hover {
+            background-color: orange;
+            color: #FFF;
+        }
+
+        section .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section .image-section .outer{
+            width:  70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            border-top: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        section .image-section img {
+            width: 90%;
+            border-radius: 50%;
+            position: relative;
+            transform: scale(1.09);
+            aspect-ratio: 1/1;
+            /* width: min(25rem, 90%); */
+        }
+
+        @media (width<800px) {
+            nav .nav-container ul {
+                position: absolute;
+                width: 100%;
+                height: calc(100vh);
+                top: 58px;
+                background: linear-gradient(270deg,#000,orange);
+                color: #000;
+                left: 0;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                left: -100%;
+                border-top: 1px solid white;
+            }
+
+            nav .nav-container ul li {
+                letter-spacing: .3rem;
+                font-size: 1.5rem;
+            }
+
+            nav .nav-container .menu {
+                display: block;
+                z-index: 100;
+            }
+
+            section .main-content {
+                padding: 5rem 1rem 5rem 1rem;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 5rem;
+            }
+
+            section .main-content .content {
+                align-items: center;
+            }
+
+            section .image-section {
+                grid-area: 1/1/2/2;
+            }
+            section .main-content .content .article{
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#">
+                    <h1>SAYEED</h1>
+                </a>
+            </div>
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">RESUME</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <div class="main-content">
+            <div class="content">
+                <h1>
+                    <p class="fadeTitle">Hello</p>
+                </h1>
+                <h1 class="title">
+                    I'm &nbsp; <span class="subtitle">Sayeed Anwar</span>
+                    <br>
+                    <p style="text-align: center;"><span class="subtitle">a</span>&nbsp;
+                        Web Devloper</p>
+                </h1>
+                <div class="article">
+                    <p>Welcome to my web developer portfolio! I'm Sayeed, a skilled and creative web developer with a
+                        passion for creating beautiful, responsive, and user-friendly websites. I've worked on a variety
+                        of web projects, ranging from personal blogs to e-commerce platforms.</p>
+                </div>
+                <div class="buttons">
+                    <button class="hire-me">Hire Me</button>
+                    <button class="portfolio">Portfolio</button>
+                </div>
+            </div>
+            <div class="image-section">
+                <div class="outer">
+                    <img src="/pic/WhatsApp Image 2023-12-28 at 21.54.41_0f074c7d.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    let menuButton = document.querySelector('.menu');
+    let ul = document.querySelector('ul');
+    menuButton.addEventListener('click', () => {
+        ul.classList.toggle('active');
+    })
+</script>
+
+</html>
